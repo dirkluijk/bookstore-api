@@ -4,9 +4,9 @@ import { NOT_FOUND, OK } from "stoker/http-status-codes";
 import { jsonContent } from "stoker/openapi/helpers";
 
 // OpenAPI models
-const ISBN = z.string().min(3).openapi("ISBN", {
+const ISBN = z.string().min(3).openapi({
   example: "9789027439642",
-});
+}).openapi("ISBN");
 
 type Book = z.infer<typeof Book>;
 const Book = z.object({
@@ -93,7 +93,7 @@ const getBookRoute = createRoute({
 });
 
 app.openapi(getBookRoute, async (c) => {
-  const isbn = c.req.param("isbn");
+  const { isbn } = c.req.valid("param");
   const result = await kv.get(["books", isbn]);
   return result.value
     ? c.json(Book.parse(result.value), 200)
@@ -118,7 +118,7 @@ const deleteBookRoute = createRoute({
 });
 
 app.openapi(deleteBookRoute, async (c) => {
-  const isbn = c.req.param("isbn");
+  const { isbn } = c.req.valid("param");
   await kv.delete(["books", isbn]);
   return c.text("Deleted!");
 });
