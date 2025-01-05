@@ -1,0 +1,78 @@
+{
+  "version": "4",
+  "specifiers": {
+    "npm:@hono/swagger-ui@*": "0.5.0_hono@4.6.15",
+    "npm:@hono/swagger-ui@0.5": "0.5.0_hono@4.6.15",
+    "npm:@hono/zod-openapi@*": "0.18.3_hono@4.6.15_zod@3.23.8",
+    "npm:@hono/zod-openapi@~0.18.3": "0.18.3_hono@4.6.15_zod@3.23.8",
+    "npm:hono@^4.6.16": "4.6.16",
+    "npm:stoker@*": "1.4.2_@asteasolutions+zod-to-openapi@7.3.0__zod@3.23.8_@hono+zod-openapi@0.18.3__hono@4.6.15__zod@3.23.8_hono@4.6.15_openapi3-ts@4.4.0",
+    "npm:stoker@^1.4.2": "1.4.2_@asteasolutions+zod-to-openapi@7.3.0__zod@3.23.8_@hono+zod-openapi@0.18.3__hono@4.6.15__zod@3.23.8_hono@4.6.15_openapi3-ts@4.4.0"
+  },
+  "npm": {
+    "@asteasolutions/zod-to-openapi@7.3.0_zod@3.23.8": {
+      "integrity": "sha512-7tE/r1gXwMIvGnXVUdIqUhCU1RevEFC4Jk6Bussa0fk1ecbnnINkZzj1EOAJyE/M3AI25DnHT/zKQL1/FPFi8Q==",
+      "dependencies": [
+        "openapi3-ts",
+        "zod"
+      ]
+    },
+    "@hono/swagger-ui@0.5.0_hono@4.6.15": {
+      "integrity": "sha512-MWYYSv9kC8IwFBLZdwgZZMT9zUq2C/4/ekuyEYOkHEgUMqu+FG3eebtBZ4ofMh60xYRxRR2BgQGoNIILys/PFg==",
+      "dependencies": [
+        "hono@4.6.15"
+      ]
+    },
+    "@hono/zod-openapi@0.18.3_hono@4.6.15_zod@3.23.8": {
+      "integrity": "sha512-bNlRDODnp7P9Fs13ZPajEOt13G0XwXKfKRHMEFCphQsFiD1Y+twzHaglpNAhNcflzR1DQwHY92ZS06b4LTPbIQ==",
+      "dependencies": [
+        "@asteasolutions/zod-to-openapi",
+        "@hono/zod-validator",
+        "hono@4.6.15",
+        "zod"
+      ]
+    },
+    "@hono/zod-validator@0.4.2_hono@4.6.15_zod@3.23.8": {
+      "integrity": "sha512-1rrlBg+EpDPhzOV4hT9pxr5+xDVmKuz6YJl+la7VCwK6ass5ldyKm5fD+umJdV2zhHD6jROoCCv8NbTwyfhT0g==",
+      "dependencies": [
+        "hono@4.6.15",
+        "zod"
+      ]
+    },
+    "hono@4.6.15": {
+      "integrity": "sha512-OiQwvAOAaI2JrABBH69z5rsctHDzFzIKJge0nYXgtzGJ0KftwLWcBXm1upJC23/omNRtnqM0gjRMbtXshPdqhQ=="
+    },
+    "hono@4.6.16": {
+      "integrity": "sha512-iE6xOPwDYlfnZFwk6BfIMMIH4WZm3pPhz6rc1uJM/OPew0pjG5K6p8WTLaMBY1/szF/T0TaEjprMpwn16BA0NQ=="
+    },
+    "openapi3-ts@4.4.0": {
+      "integrity": "sha512-9asTNB9IkKEzWMcHmVZE7Ts3kC9G7AFHfs8i7caD8HbI76gEjdkId4z/AkP83xdZsH7PLAnnbl47qZkXuxpArw==",
+      "dependencies": [
+        "yaml"
+      ]
+    },
+    "stoker@1.4.2_@asteasolutions+zod-to-openapi@7.3.0__zod@3.23.8_@hono+zod-openapi@0.18.3__hono@4.6.15__zod@3.23.8_hono@4.6.15_openapi3-ts@4.4.0": {
+      "integrity": "sha512-zna86ZzC3fnMOIkuO+1vRMfcRw7SpC/7yafRb0u8DwDVig2pPh6POVnGB7t2A5t/rMvyr7hE7tjXTPvW8bhJKg==",
+      "dependencies": [
+        "@asteasolutions/zod-to-openapi",
+        "@hono/zod-openapi",
+        "hono@4.6.15",
+        "openapi3-ts"
+      ]
+    },
+    "yaml@2.5.1": {
+      "integrity": "sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q=="
+    },
+    "zod@3.23.8": {
+      "integrity": "sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:@hono/swagger-ui@0.5",
+      "npm:@hono/zod-openapi@~0.18.3",
+      "npm:hono@^4.6.16",
+      "npm:stoker@^1.4.2"
+    ]
+  }
+}
