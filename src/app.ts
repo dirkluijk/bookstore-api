@@ -1,5 +1,6 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { swaggerUI } from "@hono/swagger-ui";
+
 import books from "./routes/books/books.index.ts";
 
 const app: OpenAPIHono = new OpenAPIHono();

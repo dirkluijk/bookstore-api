@@ -11,10 +11,10 @@ import { Book } from "./models/book.ts";
 import { kv } from "../../db.ts";
 
 export const getBooks: RouteHandler<GetBooksRoute> = async (c) => {
-  const iter = kv.list({ prefix: ["books"] });
+  const list = kv.list({ prefix: ["books"] });
   const books: Book[] = [];
 
-  for await (const res of iter) books.push(Book.parse(res.value));
+  for await (const result of list) books.push(Book.parse(result.value));
 
   return c.json(books);
 };
@@ -22,20 +22,24 @@ export const getBooks: RouteHandler<GetBooksRoute> = async (c) => {
 export const getBook: RouteHandler<GetBookRoute> = async (c) => {
   const { isbn } = c.req.valid("param");
   const result = await kv.get(["books", isbn]);
-  return result.value
-    ? c.json(Book.parse(result.value), 200)
-    : c.json({ message: "Not found" }, 404);
+
+  if (result.value === null) {
+    return c.json({ message: "Not found" }, 404);
+  }
+
+  return c.json(Book.parse(result.value), 200);
 };
 
 export const addBook: RouteHandler<AddBookRoute> = async (c) => {
   const body = c.req.valid("json");
-  const result = await kv.set(["books", body.isbn], body);
+  await kv.set(["books", body.isbn], body);
 
-  return result ? c.json(body, 200) : c.json({ message: "Not found" }, 404);
+  return c.json(body, 200);
 };
 
 export const deleteBook: RouteHandler<DeleteBookRoute> = async (c) => {
   const { isbn } = c.req.valid("param");
   await kv.delete(["books", isbn]);
+
   return c.text("Deleted!");
 };
