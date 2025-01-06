@@ -1,6 +1,9 @@
 {
   "name": "@dirkluijk/book-store-api",
-  "exports": "./main.ts",
+  "exports": "./src/app.ts",
+  "tasks": {
+    "dev": "deno serve --unstable-kv src/app.ts"
+  },
   "imports": {
     "@hono/swagger-ui": "npm:@hono/swagger-ui@^0.5.0",
     "@hono/zod-openapi": "npm:@hono/zod-openapi@^0.18.3",
@@ -9,6 +12,6 @@
   },
   "deploy": {
     "project": "df4e9b2d-4589-43d5-8451-544a03125a90",
-    "entrypoint": "main.ts"
+    "entrypoint": "src/app.ts"
   }
 }
