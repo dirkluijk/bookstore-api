@@ -4,7 +4,7 @@ Simple REST API written with Hono in Deno.
 
 ## Run locally
 
-Clone the repo and run `deno run --unstable-kv main.ts`.
+Clone the repo and run `deno run dev`.
 
 ## Demo running on Deno Deploy
 
