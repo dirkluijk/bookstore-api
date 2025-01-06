@@ -2,7 +2,8 @@
   "name": "@dirkluijk/book-store-api",
   "exports": "./src/app.ts",
   "tasks": {
-    "dev": "deno serve --unstable-kv src/app.ts"
+    "dev": "deno serve --unstable-kv src/app.ts",
+    "check": "deno check **/**.ts"
   },
   "imports": {
     "@hono/swagger-ui": "npm:@hono/swagger-ui@^0.5.0",
