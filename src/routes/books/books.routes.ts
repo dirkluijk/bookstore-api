@@ -20,10 +20,10 @@ export const getBooks = createRoute(
   },
 );
 
-// GET /api/books/:isbn
+// GET /api/books/{isbn}
 export const getBook = createRoute({
   method: "get",
-  path: "/api/books/:isbn",
+  path: "/api/books/{isbn}",
   tags,
   request: {
     params: z.object({
@@ -50,10 +50,10 @@ export const addBook = createRoute({
   },
 });
 
-// DELETE /api/books/:isbn
+// DELETE /api/books/{isbn}
 export const deleteBook = createRoute({
   method: "delete",
-  path: "/api/books/:isbn",
+  path: "/api/books/{isbn}",
   tags,
   request: {
     params: z.object({
